@@ -14,7 +14,7 @@ print(f'o total de gasto com salario foi de {salario_total_gasto:,.2f}') # total
 
 print('=-'*15)
 
-faturamento = servicos.merge(clientes) #sempre pegar a tabela com valores unicos a adicionar na tabela que pode ter valores duplicados (id do cliente)
+faturamento = servicos.merge(clientes) 
 faturamento = faturamento.drop(columns=['Cliente', 'ID Funcionário', 'Codigo do Servico'])
 faturamento['Total Faturamento'] = faturamento['Valor Contrato Mensal'] * faturamento['Tempo Total de Contrato (Meses)']
 faturamento_total = sum(faturamento['Total Faturamento'])
